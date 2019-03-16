@@ -23,12 +23,37 @@ namespace Churrasco_JoséRicardoDavid_LuizCarlosSianNeto
             {
                 txtPrecoCarvao.Text = Insumos.precoCarvao.ToString("C");
                 txtQuantCarvao.Text = insumos.sacosCarvao().ToString("D");
-            } else
+            }
+            else
             {
                 txtQuantCarvao.Text = "0";
             }
         }
 
-       
+        private void chkQueijo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkQueijo.Checked)
+            {
+                cbQuantQueijo.Enabled = true;
+            }
+            else
+            {
+                cbQuantQueijo.Enabled = false;
+                cbQuantQueijo.SelectedIndex = -1;
+            }
+        }
+
+        private void chkPaoAlho_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkPaoAlho.Checked)
+            {
+                cbQuantPaoAlho.Enabled = true;
+            }
+            else
+            {
+                cbQuantPaoAlho.Enabled = false;
+                cbQuantPaoAlho.SelectedIndex = -1;
+            }
+        }
     }
 }

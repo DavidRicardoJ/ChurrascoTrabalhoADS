@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label15 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtPrecoCarvao = new System.Windows.Forms.TextBox();
@@ -77,14 +78,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.txtQuantCrianca = new System.Windows.Forms.TextBox();
             this.txtQuantAdulto = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label30 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -104,10 +107,10 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label29);
+            this.panel3.Controls.Add(this.label28);
             this.panel3.Controls.Add(this.txtPrecoCarvao);
             this.panel3.Controls.Add(this.label26);
-            this.panel3.Controls.Add(this.lbResultado);
-            this.panel3.Controls.Add(this.label25);
             this.panel3.Controls.Add(this.txtQuantCarvao);
             this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.chkCarvao);
@@ -116,20 +119,19 @@
             this.panel3.Controls.Add(this.txtPrecoPaoAlho);
             this.panel3.Controls.Add(this.chkPaoAlho);
             this.panel3.Controls.Add(this.label16);
-            this.panel3.Controls.Add(this.btnCalcular);
             this.panel3.Controls.Add(this.txtPrecoQueijo);
             this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.chkQueijo);
             this.panel3.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(8, 352);
+            this.panel3.Location = new System.Drawing.Point(8, 250);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(336, 190);
+            this.panel3.Size = new System.Drawing.Size(336, 130);
             this.panel3.TabIndex = 10;
             // 
             // txtPrecoCarvao
             // 
             this.txtPrecoCarvao.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.txtPrecoCarvao.Location = new System.Drawing.Point(253, 95);
+            this.txtPrecoCarvao.Location = new System.Drawing.Point(239, 95);
             this.txtPrecoCarvao.Name = "txtPrecoCarvao";
             this.txtPrecoCarvao.ReadOnly = true;
             this.txtPrecoCarvao.Size = new System.Drawing.Size(62, 21);
@@ -138,7 +140,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(211, 97);
+            this.label26.Location = new System.Drawing.Point(197, 97);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(44, 19);
             this.label26.TabIndex = 32;
@@ -148,7 +150,7 @@
             // 
             this.lbResultado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbResultado.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbResultado.Location = new System.Drawing.Point(197, 143);
+            this.lbResultado.Location = new System.Drawing.Point(237, 115);
             this.lbResultado.Name = "lbResultado";
             this.lbResultado.Size = new System.Drawing.Size(65, 19);
             this.lbResultado.TabIndex = 31;
@@ -157,28 +159,29 @@
             // 
             // label25
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(126, 143);
+            this.label25.Location = new System.Drawing.Point(147, 116);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(65, 19);
+            this.label25.Size = new System.Drawing.Size(90, 19);
             this.label25.TabIndex = 30;
-            this.label25.Text = "Resultado:";
+            this.label25.Text = "Total:";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtQuantCarvao
             // 
             this.txtQuantCarvao.BackColor = System.Drawing.SystemColors.Control;
             this.txtQuantCarvao.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantCarvao.Location = new System.Drawing.Point(168, 97);
+            this.txtQuantCarvao.Location = new System.Drawing.Point(154, 97);
             this.txtQuantCarvao.Name = "txtQuantCarvao";
             this.txtQuantCarvao.ReadOnly = true;
-            this.txtQuantCarvao.Size = new System.Drawing.Size(40, 21);
+            this.txtQuantCarvao.Size = new System.Drawing.Size(32, 21);
             this.txtQuantCarvao.TabIndex = 29;
             this.txtQuantCarvao.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.toolTip1.SetToolTip(this.txtQuantCarvao, "A cada 3 Kg de carne é adicionado um saco de carvão.");
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(104, 97);
+            this.label18.Location = new System.Drawing.Point(90, 97);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(63, 19);
             this.label18.TabIndex = 28;
@@ -187,7 +190,7 @@
             // chkCarvao
             // 
             this.chkCarvao.AutoSize = true;
-            this.chkCarvao.Location = new System.Drawing.Point(16, 97);
+            this.chkCarvao.Location = new System.Drawing.Point(16, 95);
             this.chkCarvao.Name = "chkCarvao";
             this.chkCarvao.Size = new System.Drawing.Size(72, 23);
             this.chkCarvao.TabIndex = 27;
@@ -199,6 +202,7 @@
             // 
             this.cbQuantPaoAlho.BackColor = System.Drawing.Color.SeaShell;
             this.cbQuantPaoAlho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbQuantPaoAlho.Enabled = false;
             this.cbQuantPaoAlho.FormattingEnabled = true;
             this.cbQuantPaoAlho.Items.AddRange(new object[] {
             "1",
@@ -207,15 +211,16 @@
             "4",
             "5",
             "6"});
-            this.cbQuantPaoAlho.Location = new System.Drawing.Point(224, 44);
+            this.cbQuantPaoAlho.Location = new System.Drawing.Point(239, 42);
             this.cbQuantPaoAlho.Name = "cbQuantPaoAlho";
-            this.cbQuantPaoAlho.Size = new System.Drawing.Size(91, 27);
+            this.cbQuantPaoAlho.Size = new System.Drawing.Size(62, 27);
             this.cbQuantPaoAlho.TabIndex = 26;
             // 
             // cbQuantQueijo
             // 
             this.cbQuantQueijo.BackColor = System.Drawing.Color.SeaShell;
             this.cbQuantQueijo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbQuantQueijo.Enabled = false;
             this.cbQuantQueijo.FormattingEnabled = true;
             this.cbQuantQueijo.Items.AddRange(new object[] {
             "1",
@@ -224,36 +229,37 @@
             "4",
             "5",
             "6"});
-            this.cbQuantQueijo.Location = new System.Drawing.Point(224, 9);
+            this.cbQuantQueijo.Location = new System.Drawing.Point(239, 7);
             this.cbQuantQueijo.Name = "cbQuantQueijo";
-            this.cbQuantQueijo.Size = new System.Drawing.Size(91, 27);
+            this.cbQuantQueijo.Size = new System.Drawing.Size(62, 27);
             this.cbQuantQueijo.TabIndex = 25;
             // 
             // txtPrecoPaoAlho
             // 
             this.txtPrecoPaoAlho.BackColor = System.Drawing.SystemColors.Control;
             this.txtPrecoPaoAlho.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoPaoAlho.Location = new System.Drawing.Point(146, 50);
+            this.txtPrecoPaoAlho.Location = new System.Drawing.Point(136, 48);
             this.txtPrecoPaoAlho.Name = "txtPrecoPaoAlho";
             this.txtPrecoPaoAlho.ReadOnly = true;
-            this.txtPrecoPaoAlho.Size = new System.Drawing.Size(62, 21);
+            this.txtPrecoPaoAlho.Size = new System.Drawing.Size(50, 21);
             this.txtPrecoPaoAlho.TabIndex = 18;
             this.txtPrecoPaoAlho.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // chkPaoAlho
             // 
             this.chkPaoAlho.AutoSize = true;
-            this.chkPaoAlho.Location = new System.Drawing.Point(16, 54);
+            this.chkPaoAlho.Location = new System.Drawing.Point(16, 52);
             this.chkPaoAlho.Name = "chkPaoAlho";
             this.chkPaoAlho.Size = new System.Drawing.Size(100, 23);
             this.chkPaoAlho.TabIndex = 24;
             this.chkPaoAlho.Text = "Pão de Alho?";
             this.chkPaoAlho.UseVisualStyleBackColor = true;
+            this.chkPaoAlho.CheckedChanged += new System.EventHandler(this.chkPaoAlho_CheckedChanged);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(120, 53);
+            this.label16.Location = new System.Drawing.Point(112, 52);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(23, 19);
             this.label16.TabIndex = 17;
@@ -261,7 +267,7 @@
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(14, 135);
+            this.btnCalcular.Location = new System.Drawing.Point(15, 107);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(82, 34);
             this.btnCalcular.TabIndex = 23;
@@ -272,17 +278,17 @@
             // 
             this.txtPrecoQueijo.BackColor = System.Drawing.SystemColors.Control;
             this.txtPrecoQueijo.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoQueijo.Location = new System.Drawing.Point(146, 16);
+            this.txtPrecoQueijo.Location = new System.Drawing.Point(136, 14);
             this.txtPrecoQueijo.Name = "txtPrecoQueijo";
             this.txtPrecoQueijo.ReadOnly = true;
-            this.txtPrecoQueijo.Size = new System.Drawing.Size(62, 21);
+            this.txtPrecoQueijo.Size = new System.Drawing.Size(50, 21);
             this.txtPrecoQueijo.TabIndex = 16;
             this.txtPrecoQueijo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(121, 17);
+            this.label17.Location = new System.Drawing.Point(111, 17);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(23, 19);
             this.label17.TabIndex = 15;
@@ -291,18 +297,19 @@
             // chkQueijo
             // 
             this.chkQueijo.AutoSize = true;
-            this.chkQueijo.Location = new System.Drawing.Point(16, 20);
+            this.chkQueijo.Location = new System.Drawing.Point(16, 18);
             this.chkQueijo.Name = "chkQueijo";
             this.chkQueijo.Size = new System.Drawing.Size(69, 23);
             this.chkQueijo.TabIndex = 20;
             this.chkQueijo.Text = "Queijo?";
             this.chkQueijo.UseVisualStyleBackColor = true;
+            this.chkQueijo.CheckedChanged += new System.EventHandler(this.chkQueijo_CheckedChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(5, 249);
+            this.label5.Location = new System.Drawing.Point(5, 134);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 19);
             this.label5.TabIndex = 9;
@@ -322,7 +329,7 @@
             this.panel2.Controls.Add(this.txtQuantCerveja);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(8, 266);
+            this.panel2.Location = new System.Drawing.Point(8, 151);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(336, 78);
             this.panel2.TabIndex = 8;
@@ -348,7 +355,7 @@
             // txtPrecoRefri
             // 
             this.txtPrecoRefri.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoRefri.Location = new System.Drawing.Point(253, 42);
+            this.txtPrecoRefri.Location = new System.Drawing.Point(239, 42);
             this.txtPrecoRefri.Name = "txtPrecoRefri";
             this.txtPrecoRefri.Size = new System.Drawing.Size(62, 21);
             this.txtPrecoRefri.TabIndex = 21;
@@ -357,7 +364,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(227, 45);
+            this.label8.Location = new System.Drawing.Point(213, 45);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(23, 19);
             this.label8.TabIndex = 20;
@@ -366,7 +373,7 @@
             // txtPrecoCerveja
             // 
             this.txtPrecoCerveja.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoCerveja.Location = new System.Drawing.Point(253, 13);
+            this.txtPrecoCerveja.Location = new System.Drawing.Point(239, 13);
             this.txtPrecoCerveja.Name = "txtPrecoCerveja";
             this.txtPrecoCerveja.Size = new System.Drawing.Size(62, 21);
             this.txtPrecoCerveja.TabIndex = 19;
@@ -375,7 +382,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(228, 14);
+            this.label12.Location = new System.Drawing.Point(214, 14);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(23, 19);
             this.label12.TabIndex = 18;
@@ -443,7 +450,7 @@
             this.panel1.Controls.Add(this.txtCarne);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(8, 131);
+            this.panel1.Location = new System.Drawing.Point(8, 16);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(336, 113);
             this.panel1.TabIndex = 6;
@@ -478,7 +485,7 @@
             // txtPrecoLinguica
             // 
             this.txtPrecoLinguica.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoLinguica.Location = new System.Drawing.Point(253, 79);
+            this.txtPrecoLinguica.Location = new System.Drawing.Point(239, 79);
             this.txtPrecoLinguica.Name = "txtPrecoLinguica";
             this.txtPrecoLinguica.Size = new System.Drawing.Size(62, 21);
             this.txtPrecoLinguica.TabIndex = 11;
@@ -487,7 +494,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(228, 81);
+            this.label11.Location = new System.Drawing.Point(214, 81);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(23, 19);
             this.label11.TabIndex = 10;
@@ -496,7 +503,7 @@
             // txtPrecoFrango
             // 
             this.txtPrecoFrango.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoFrango.Location = new System.Drawing.Point(253, 48);
+            this.txtPrecoFrango.Location = new System.Drawing.Point(239, 48);
             this.txtPrecoFrango.Name = "txtPrecoFrango";
             this.txtPrecoFrango.Size = new System.Drawing.Size(62, 21);
             this.txtPrecoFrango.TabIndex = 9;
@@ -505,7 +512,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(227, 51);
+            this.label10.Location = new System.Drawing.Point(213, 51);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(23, 19);
             this.label10.TabIndex = 8;
@@ -514,7 +521,7 @@
             // txtPrecoCarne
             // 
             this.txtPrecoCarne.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoCarne.Location = new System.Drawing.Point(253, 19);
+            this.txtPrecoCarne.Location = new System.Drawing.Point(239, 19);
             this.txtPrecoCarne.Name = "txtPrecoCarne";
             this.txtPrecoCarne.Size = new System.Drawing.Size(62, 21);
             this.txtPrecoCarne.TabIndex = 7;
@@ -523,7 +530,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(228, 20);
+            this.label9.Location = new System.Drawing.Point(214, 20);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(23, 19);
             this.label9.TabIndex = 6;
@@ -583,38 +590,27 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.groupBox1);
-            this.panel4.Controls.Add(this.txtQuantCrianca);
             this.panel4.Controls.Add(this.txtQuantAdulto);
-            this.panel4.Controls.Add(this.label20);
             this.panel4.Controls.Add(this.label19);
-            this.panel4.Location = new System.Drawing.Point(8, 6);
+            this.panel4.Controls.Add(this.btnCalcular);
+            this.panel4.Controls.Add(this.lbResultado);
+            this.panel4.Controls.Add(this.label25);
+            this.panel4.Location = new System.Drawing.Point(8, 401);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(336, 109);
+            this.panel4.Size = new System.Drawing.Size(336, 155);
             this.panel4.TabIndex = 12;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(181, 9);
+            this.groupBox1.Location = new System.Drawing.Point(14, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(135, 88);
+            this.groupBox1.Size = new System.Drawing.Size(103, 69);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pagamento";
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold);
-            this.radioButton3.Location = new System.Drawing.Point(6, 64);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(93, 23);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.Text = "Por Criança";
-            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
@@ -622,9 +618,9 @@
             this.radioButton2.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold);
             this.radioButton2.Location = new System.Drawing.Point(6, 40);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(88, 23);
+            this.radioButton2.Size = new System.Drawing.Size(94, 23);
             this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "Por Adulto";
+            this.radioButton2.Text = "Por Clientes";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
@@ -640,57 +636,79 @@
             this.radioButton1.Text = "Único";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // txtQuantCrianca
-            // 
-            this.txtQuantCrianca.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantCrianca.Location = new System.Drawing.Point(66, 47);
-            this.txtQuantCrianca.Name = "txtQuantCrianca";
-            this.txtQuantCrianca.Size = new System.Drawing.Size(80, 21);
-            this.txtQuantCrianca.TabIndex = 13;
-            // 
             // txtQuantAdulto
             // 
             this.txtQuantAdulto.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantAdulto.Location = new System.Drawing.Point(66, 20);
+            this.txtQuantAdulto.Location = new System.Drawing.Point(260, 25);
             this.txtQuantAdulto.Name = "txtQuantAdulto";
-            this.txtQuantAdulto.Size = new System.Drawing.Size(80, 21);
+            this.txtQuantAdulto.Size = new System.Drawing.Size(42, 21);
             this.txtQuantAdulto.TabIndex = 12;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label20.Location = new System.Drawing.Point(11, 48);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(56, 19);
-            this.label20.TabIndex = 1;
-            this.label20.Text = "Crianças";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(16, 22);
+            this.label19.Location = new System.Drawing.Point(120, 27);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(51, 19);
+            this.label19.Size = new System.Drawing.Size(139, 19);
             this.label19.TabIndex = 0;
-            this.label19.Text = "Adultos";
+            this.label19.Text = "Quantidade de Clientes:";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label21.Location = new System.Drawing.Point(5, 118);
+            this.label21.Location = new System.Drawing.Point(5, 3);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(47, 19);
             this.label21.TabIndex = 13;
             this.label21.Text = "Carnes";
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label27.Location = new System.Drawing.Point(5, 232);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(95, 19);
+            this.label27.TabIndex = 14;
+            this.label27.Text = "Outros Insumos";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(191, 13);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(46, 19);
+            this.label28.TabIndex = 34;
+            this.label28.Text = "Quant.";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(190, 48);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(46, 19);
+            this.label29.TabIndex = 35;
+            this.label29.Text = "Quant.";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label30.Location = new System.Drawing.Point(7, 388);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(41, 19);
+            this.label30.TabIndex = 15;
+            this.label30.Text = "Totais";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 547);
+            this.ClientSize = new System.Drawing.Size(351, 563);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.label27);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label15);
@@ -742,12 +760,9 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox txtQuantCrianca;
         private System.Windows.Forms.TextBox txtQuantAdulto;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label24;
@@ -776,6 +791,11 @@
         private System.Windows.Forms.CheckBox chkCarvao;
         private System.Windows.Forms.TextBox txtPrecoCarvao;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label30;
     }
 }
 
