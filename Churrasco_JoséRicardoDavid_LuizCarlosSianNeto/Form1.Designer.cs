@@ -307,16 +307,16 @@
             // 
             this.lbResultado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbResultado.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbResultado.Location = new System.Drawing.Point(256, 92);
+            this.lbResultado.Location = new System.Drawing.Point(238, 92);
             this.lbResultado.Name = "lbResultado";
-            this.lbResultado.Size = new System.Drawing.Size(65, 19);
+            this.lbResultado.Size = new System.Drawing.Size(83, 19);
             this.lbResultado.TabIndex = 31;
             this.lbResultado.Text = "0";
             this.lbResultado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbTotal
             // 
-            this.lbTotal.Location = new System.Drawing.Point(166, 93);
+            this.lbTotal.Location = new System.Drawing.Point(151, 93);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(90, 19);
             this.lbTotal.TabIndex = 30;
@@ -709,7 +709,7 @@
             this.txtQuantAdulto.Text = "1";
             this.txtQuantAdulto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtQuantAdulto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuantAdulto_KeyDown);
-            this.txtQuantAdulto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantAdulto_KeyPress);          
+            this.txtQuantAdulto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantAdulto_KeyPress);
             // 
             // label19
             // 

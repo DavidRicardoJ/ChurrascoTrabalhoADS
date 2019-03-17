@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -19,29 +20,39 @@ namespace Principal
         double precoCerveja, precoRefri;
         int quantQueijo, quantPaoAlho, quantCarvao;
         int quantPessoas;
+        int numSacosCarvao;
+
+        public const double precoQueijo = 12.50;
+        public const double precoPaoAlho = 7.50;
+        public const double precoCarvao = 15.00;
+
 
         #endregion
 
 
-        Insumos insumos = new Insumos();
+
         Validacao validacao = new Validacao();
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            txtPrecoQueijo.Text = Insumos.precoQueijo.ToString("C");
-            txtPrecoPaoAlho.Text = Insumos.precoPaoAlho.ToString("C");
-            txtPrecoCarvao.Text = Insumos.precoCarvao.ToString("C");
+            txtPrecoQueijo.Text = precoQueijo.ToString("C");
+            txtPrecoPaoAlho.Text = precoPaoAlho.ToString("C");
+            txtPrecoCarvao.Text = precoCarvao.ToString("C");
         }
+
+        #region Validaçoes da interface
 
         private void chkCarvao_CheckedChanged(object sender, EventArgs e)
         {
             if (chkCarvao.Checked)
             {
-
-                txtQuantCarvao.Text = insumos.sacosCarvao().ToString("D");
+                atribuiVariavel();
+                txtQuantCarvao.Text = sacosCarvao().ToString("D");
             }
             else
             {
                 txtQuantCarvao.Text = "0";
+                quantCarvao = 0;
             }
         }
 
@@ -82,7 +93,7 @@ namespace Principal
             {
                 lbTotal.Text = "Total:";
                 txtQuantAdulto.Text = "1";
-                
+
             }
         }
 
@@ -399,7 +410,7 @@ namespace Principal
             }
         }
 
-        
+
 
         private void txtPrecoRefri_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -432,6 +443,7 @@ namespace Principal
                 e.Handled = true;
             }
         }
+        #endregion
 
         private bool VerificaTextBoxEmPares()
         {
@@ -536,7 +548,7 @@ namespace Principal
                 txtPrecoRefri.BackColor = Color.White;
             }
             #endregion
-            
+
 
             if (erro > 0)
             {
@@ -549,7 +561,7 @@ namespace Principal
         }
         #region verifica o item queijo
         private bool verifaQueijo()
-        {            
+        {
             if (chkQueijo.Checked && cbQuantQueijo.SelectedIndex == -1)
             {
                 MessageBox.Show("Selecione a quantidade de queijos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -585,7 +597,7 @@ namespace Principal
                 try
                 {
                     int nPessoas = int.Parse(txtQuantAdulto.Text);
-                    if (nPessoas < 2 && rbUnico.Checked==false)
+                    if (nPessoas < 2 && rbUnico.Checked == false)
                     {
                         MessageBox.Show("A quantidade de pessoas deve ser maior que 2.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         txtQuantAdulto.Focus();
@@ -601,8 +613,8 @@ namespace Principal
                 }
                 return true;
             }
-            
-            
+
+
         }
         #endregion
 
@@ -611,16 +623,18 @@ namespace Principal
             if (VerificaTextBoxEmPares() & verifaQueijo() & verifaPaoAlho() & verificaCliente())
             {
                 atribuiVariavel();
-                atribuirConstrutores();
+                sacosCarvao();
+                imprimeTotais();
+
 
             }
             else
             {
-                if(erro != 0)
+                if (erro != 0)
                 {
                     MessageBox.Show("Preencha os campos em amarelo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-               
+
             }
 
         }
@@ -633,7 +647,8 @@ namespace Principal
                 if (txtCarne.Text != String.Empty)
                 {
                     kgCarne = double.Parse(txtCarne.Text);
-                } else kgCarne = 0;
+                }
+                else kgCarne = 0;
                 //
                 if (txtFrango.Text != String.Empty)
                 {
@@ -714,28 +729,71 @@ namespace Principal
                 else quantPessoas = 1;
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Erro de conversão: " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
         #endregion
 
-        private void atribuirConstrutores()
+
+
+
+        public int sacosCarvao()
         {
-            Carne carne = new Carne(kgCarne,precoCarne,kgFrango,precoFrango,kgLinguica,precoLinguica);
-            Bebidas bebidas = new Bebidas(precoCerveja, precoRefri);
-            Bebidas bebidas2 = new Bebidas(quantCerveja, quantRefri);
-            txtQuantCarvao.Text = insumos.sacosCarvao().ToString();
-            Carne carnes = new Carne();
-           double teste = carnes.kilosCarne();
-            MessageBox.Show(teste.ToString());
-            
+            if (chkCarvao.Checked == false)
+            {
+               return numSacosCarvao = 0;
+            }
+            else
+            {
+
+
+                try
+                {
+                    numSacosCarvao = (int)((kgCarne + kgFrango + kgLinguica) / 3);
+
+                    if (numSacosCarvao == 0)
+                    {
+                        numSacosCarvao = 1; //pelo menos um carvao deverá ser vendido se o cliente assim quiser.
+                    }
+                    txtQuantCarvao.Text = numSacosCarvao.ToString("D");
+                    return numSacosCarvao;
+                }
+                catch
+                {
+                    return numSacosCarvao = 1;
+                }
+            }
         }
+        public double totalInsumos()
+        {
+            return precoQueijo * quantQueijo + precoPaoAlho * quantPaoAlho + numSacosCarvao * precoCarvao;
+        }
+        public double totalBebidas()
+        {
+            return quantCerveja * precoCerveja + quantRefri * precoRefri;
+        }
+        public double totalCarne()
+        {
+            return kgCarne * precoCarne + kgFrango * precoFrango + kgLinguica * precoLinguica;
+        }
+
+        public void imprimeTotais()
+        {
+            if (rbUnico.Checked)
+            {
+                lbResultado.Text = (totalInsumos() + totalBebidas() + totalCarne()).ToString("C");
+            }
+            else
+            {
+                lbResultado.Text = ((totalInsumos() + totalBebidas() + totalCarne()) / quantPessoas).ToString("C");
+            }
+        }
+
+
     }
-
-
 }
 
 
