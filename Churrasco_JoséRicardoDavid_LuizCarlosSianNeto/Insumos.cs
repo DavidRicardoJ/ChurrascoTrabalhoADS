@@ -1,4 +1,6 @@
-﻿namespace Churrasco_JoséRicardoDavid_LuizCarlosSianNeto
+﻿using System.Windows.Forms;
+
+    namespace Principal
 {
     class Insumos
     {
@@ -9,7 +11,7 @@
 
         private int quantQueijo;
         private int quantPaoAlho;
-        private int numSacosCarvao;
+        private int numSacosCarvao=0;
 
 
 
@@ -26,7 +28,9 @@
         public int sacosCarvao()
         {
             Carne carne = new Carne();
-            numSacosCarvao = ((int)carne.KgCarne) / 3;
+
+            numSacosCarvao =(int) carne.kilosCarne() / 3;
+
             if (numSacosCarvao == 0)
             {
                 numSacosCarvao = 1; //pelo menos um carvao deverá ser vendido se o cliente assim quiser.

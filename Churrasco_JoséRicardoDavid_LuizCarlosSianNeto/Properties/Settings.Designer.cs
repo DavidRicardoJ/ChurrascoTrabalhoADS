@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Churrasco_JoséRicardoDavid_LuizCarlosSianNeto.Properties
+namespace Principal.Properties
 {
 
 

@@ -1,8 +1,8 @@
-﻿namespace Churrasco_JoséRicardoDavid_LuizCarlosSianNeto
+﻿namespace Principal
 {
     class Carne
     {
-        private double kgCarne, precoCarne;
+        public double kgCarne, precoCarne;
         private double kgFrango, precoFrango;
         private double kgLinguica, precoLinguica;
 
@@ -22,11 +22,18 @@
         {
         }
 
-        public double KgCarne { get => kgCarne; set => kgCarne = value; }
+        
 
-        public double totalCarne()
+        public double totalCarne ()        
         {
+            double teste = kgCarne * precoCarne + kgFrango * precoFrango + kgLinguica * precoLinguica;
             return kgCarne * precoCarne + kgFrango * precoFrango + kgLinguica * precoLinguica;
+        }
+
+        public double kilosCarne ()
+        {
+             double teste = kgCarne * kgFrango * kgLinguica;
+            return teste;
         }
     }
 }
